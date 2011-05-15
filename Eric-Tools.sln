@@ -15,7 +15,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "coapp.simplesigner", "..\si
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "coapp-testpackagemaker", "..\testpackagemaker\coapp-testpackagemaker.csproj", "{24200A95-ABD9-4301-B54B-3A94FC9AD509}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{1172D62B-0F15-4E30-91E8-7483B1C4EE1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9BB9D227-ECD7-4F9D-A2C7-B0EF47DAC2D6}"
+	ProjectSection(SolutionItems) = preProject
+		Eric-Tools.vsmdi = Eric-Tools.vsmdi
+		Test.testsettings = Test.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ptk", "..\ptk\ptk.csproj", "{C0A44000-B786-43FE-B14F-AB411403B499}"
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Eric-Tools.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -64,6 +77,18 @@ Global
 		{24200A95-ABD9-4301-B54B-3A94FC9AD509}.Release|Any CPU.Build.0 = Release|Any CPU
 		{24200A95-ABD9-4301-B54B-3A94FC9AD509}.Test|Any CPU.ActiveCfg = Release|Any CPU
 		{24200A95-ABD9-4301-B54B-3A94FC9AD509}.Test|Any CPU.Build.0 = Release|Any CPU
+		{1172D62B-0F15-4E30-91E8-7483B1C4EE1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1172D62B-0F15-4E30-91E8-7483B1C4EE1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1172D62B-0F15-4E30-91E8-7483B1C4EE1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1172D62B-0F15-4E30-91E8-7483B1C4EE1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1172D62B-0F15-4E30-91E8-7483B1C4EE1D}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{1172D62B-0F15-4E30-91E8-7483B1C4EE1D}.Test|Any CPU.Build.0 = Release|Any CPU
+		{C0A44000-B786-43FE-B14F-AB411403B499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0A44000-B786-43FE-B14F-AB411403B499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0A44000-B786-43FE-B14F-AB411403B499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0A44000-B786-43FE-B14F-AB411403B499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0A44000-B786-43FE-B14F-AB411403B499}.Test|Any CPU.ActiveCfg = Test|Any CPU
+		{C0A44000-B786-43FE-B14F-AB411403B499}.Test|Any CPU.Build.0 = Test|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

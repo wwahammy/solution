@@ -68,7 +68,7 @@ namespace TestProject1
         /// <summary>
         ///A test for Load
         ///</summary>
-        [TestMethod()]
+        //[TestMethod()]
         public void LoadTest()
         {
             string file = @"C:\Users\Eric\Desktop\CoappTest.pfx"; // TODO: Initialize to an appropriate value

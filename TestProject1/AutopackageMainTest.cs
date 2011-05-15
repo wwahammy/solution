@@ -67,8 +67,8 @@ namespace TestProject1
         /// <summary>
         ///A test for Main
         ///</summary>
-        [TestMethod()]
-        [DeploymentItem("autopackage.exe")]
+        //[TestMethod()]
+        //[DeploymentItem("autopackage.exe")]
         public void MainTest()
         {
             string[] args = null; // TODO: Initialize to an appropriate value

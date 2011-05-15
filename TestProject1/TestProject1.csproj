@@ -69,19 +69,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="StringExtensionsTest.cs" />
     <Compile Include="VerifierTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\coapp-autopackage\coapp-autopackage.csproj">
+    <ProjectReference Include="..\..\autopackage\autopackage.csproj">
       <Project>{D1102D1E-7ACE-4A81-96B8-36DA12310001}</Project>
       <Name>coapp-autopackage</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\coapp-toolkit\CoApp.Toolkit.csproj">
+    <ProjectReference Include="..\..\toolkit\CoApp.Toolkit.csproj">
       <Project>{8B7E0D2F-6CA0-4E5E-BF52-1E4BDB132BBC}</Project>
       <Name>CoApp.Toolkit</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\coapp-toolkit\CoApp.Toolkit.Engine.csproj">
+    <ProjectReference Include="..\..\toolkit\CoApp.Toolkit.Engine.csproj">
       <Project>{CC917E10-0068-4E91-8D3D-76CB446F7E43}</Project>
       <Name>CoApp.Toolkit.Engine</Name>
     </ProjectReference>
@@ -97,11 +102,31 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TestDirs\Dir2\final.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestDirs\Dir2\tests.txt" />
+    <Content Include="TestDirs\Dir\Dir2\Item.txt" />
+    <Content Include="TestDirs\Dir\Dir\final.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="gpl-3.0.txt" />
+    <Content Include="TestDirs\Dir\item.test_name\quick.txt" />
+    <Content Include="TestDirs\Dir\tests.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Shadow Include="Test References\autopackage.accessor" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TestDirs\Dir\Dir2\item.test_name" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
