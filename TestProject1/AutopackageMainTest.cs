@@ -1,7 +1,8 @@
 ﻿using CoApp.Autopackage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-
+using System.Collections.Generic;
+using System.Linq;
 namespace TestProject1
 {
     
@@ -65,16 +66,18 @@ namespace TestProject1
 
 
         /// <summary>
-        ///A test for Main
+        ///A test for ExpandWildcards
         ///</summary>
-        //[TestMethod()]
-        //[DeploymentItem("autopackage.exe")]
-        public void MainTest()
+        [TestMethod()]
+        [DeploymentItem("autopackage.exe")]
+        public void ExpandWildcardsTest()
         {
-            string[] args = null; // TODO: Initialize to an appropriate value
-            int expected = 0; // TODO: Initialize to an appropriate value
-            int actual;
-            actual = AutopackageMain_Accessor.Main(args);
+            AutopackageMain_Accessor target = new AutopackageMain_Accessor(); // TODO: Initialize to an appropriate value
+            IEnumerable<Tup> includes = new List<Tup>() { new Tup() { L="Foo", R="Dir/**/*.txt"}}; // TODO: Initialize to an appropriate value
+            IEnumerable<string> excludes = null; // TODO: Initialize to an appropriate value
+            IEnumerable<Tup> expected = null; // TODO: Initialize to an appropriate value
+            IEnumerable<Tup> actual;
+            actual = AutopackageMain_Accessor.ExpandWildcards(includes, excludes);
             Assert.AreEqual(expected, actual);
             Assert.Inconclusive("Verify the correctness of this test method.");
         }

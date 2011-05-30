@@ -86,13 +86,13 @@
       <Project>{8B7E0D2F-6CA0-4E5E-BF52-1E4BDB132BBC}</Project>
       <Name>CoApp.Toolkit</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\toolkit\CoApp.Toolkit.Debug.csproj">
+      <Project>{A126ABBC-9199-4096-9714-4A1BEF84EE89}</Project>
+      <Name>CoApp.Toolkit.Debug</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\toolkit\CoApp.Toolkit.Engine.csproj">
       <Project>{CC917E10-0068-4E91-8D3D-76CB446F7E43}</Project>
       <Name>CoApp.Toolkit.Engine</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\coapp-toolkit\CoApp.Toolkit.Unsafe.csproj">
-      <Project>{59D1DBB3-5848-4026-9523-BBC7618B7B77}</Project>
-      <Name>CoApp.Toolkit.Unsafe</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
