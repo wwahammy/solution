@@ -2,17 +2,17 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+
 namespace TestProject1
 {
     
     
     /// <summary>
-    ///This is a test class for AutopackageMainTest and is intended
-    ///to contain all AutopackageMainTest Unit Tests
+    ///This is a test class for TupListExtensionsTest and is intended
+    ///to contain all TupListExtensionsTest Unit Tests
     ///</summary>
     [TestClass()]
-    public class AutopackageMainTest
+    public class TupListExtensionsTest
     {
 
 
@@ -66,18 +66,15 @@ namespace TestProject1
 
 
         /// <summary>
-        ///A test for ExpandWildcards
+        ///A test for BinaryFiles
         ///</summary>
-        //[TestMethod()]
-        [DeploymentItem("autopackage.exe")]
-        public void ExpandWildcardsTest()
+       
+        public void BinaryFilesTest()
         {
-            AutopackageMain_Accessor target = new AutopackageMain_Accessor(); // TODO: Initialize to an appropriate value
-            IEnumerable<Tup> includes = new List<Tup>() { new Tup() { L="Foo", R="Dir/**/*.txt"}}; // TODO: Initialize to an appropriate value
-            IEnumerable<string> excludes = null; // TODO: Initialize to an appropriate value
+            IEnumerable<Tup> input = new List<Tup>() { new Tup() { R = ".exe" }, new Tup() { R = ".exe.home" }, new Tup() { R = ".exe/blah" }}; // TODO: Initialize to an appropriate value
             IEnumerable<Tup> expected = null; // TODO: Initialize to an appropriate value
             IEnumerable<Tup> actual;
-            actual = AutopackageMain_Accessor.ExpandWildcards(includes, excludes);
+            actual = TupListExtensions.BinaryFiles(input);
             Assert.AreEqual(expected, actual);
             Assert.Inconclusive("Verify the correctness of this test method.");
         }

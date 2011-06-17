@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Security.Cryptography.X509Certificates;
+using TestProject1.Properties;
+using System.Linq;
 
 namespace TestProject1
 {
@@ -84,6 +86,40 @@ namespace TestProject1
                 Console.WriteLine();
             }
             //Assert.AreEqual(expected, actual);
+            Assert.Inconclusive("Verify the correctness of this test method.");
+        }
+
+
+
+
+        /// <summary>
+        ///A test for CryptDecodeObjectEx
+        ///</summary>
+        
+        public void CryptDecodeObjectExTest()
+        {
+            Encodings dwCertEncodingType = new Encodings(); // TODO: Initialize to an appropriate value
+            int lpszStructType = 0; // TODO: Initialize to an appropriate value
+            byte[] pbEncoded = null; // TODO: Initialize to an appropriate value
+            int cbEncoded = 0; // TODO: Initialize to an appropriate value
+            int dwFlags = 0; // TODO: Initialize to an appropriate value
+            IntPtr blah = new IntPtr(); // TODO: Initialize to an appropriate value
+            CERT_PUBLIC_KEY_INFO pDecodePara = new CERT_PUBLIC_KEY_INFO(); // TODO: Initialize to an appropriate value
+            CERT_PUBLIC_KEY_INFO pDecodeParaExpected = new CERT_PUBLIC_KEY_INFO(); // TODO: Initialize to an appropriate value
+            int pcbStructInfo = 0; // TODO: Initialize to an appropriate value
+            int pcbStructInfoExpected = 0; // TODO: Initialize to an appropriate value
+            bool expected = false; // TODO: Initialize to an appropriate value
+
+
+            var certInput = Resources.crud;
+            var input = from a in certInput.Split(' ')
+                        select Byte.Parse(a, System.Globalization.NumberStyles.HexNumber);
+            bool actual;
+            actual = PfxStoreLoader.CryptDecodeObjectEx((Encodings.PKCS_7_ASN_ENCODING | Encodings.X509_ASN_ENCODING), PfxStoreLoader.X509_PUBLIC_KEY_INFO, 
+                input.ToArray(), input.Count(), PfxStoreLoader.CRYPT_DECODE_ALLOC_FLAG, IntPtr.Zero, ref pDecodePara, ref pcbStructInfo);
+            Assert.AreEqual(pDecodeParaExpected, pDecodePara);
+            Assert.AreEqual(pcbStructInfoExpected, pcbStructInfo);
+            Assert.AreEqual(expected, actual);
             Assert.Inconclusive("Verify the correctness of this test method.");
         }
     }

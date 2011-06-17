@@ -117,11 +117,117 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="crud" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\crud.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="AppTemplate" xml:space="preserve">
+    <value>#include &lt;stdio.h&gt;
+
+[$IMPORT_LIBRARY]
+
+int print_[$LIBNAME]() { 
+    printf(""&lt;app name='[$LIBNAME]'&gt;\r\n"");
+    
+    [$CALL_LIBRARY]
+        
+    printf(""&lt;/app&gt;\r\n"");
+    return 0;
+}
+
+int main(int argc, char** argv) {
+    print_[$LIBNAME]();
+    return 0;
+}</value>
   </data>
-  <data name="gpl_3_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\gpl-3.0.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CoAppTestCert" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\coapptest.pfx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LibraryFunctionCallTemplate" xml:space="preserve">
+    <value>printf(""&lt;request name='[$LIBNAME]' version='[$LIBVERSION]' /&gt;\r\n"" );
+        print_[$LIBNAME]();</value>
+  </data>
+  <data name="LibraryReferenceTemplate" xml:space="preserve">
+    <value>// #pragma comment(linker, ""\""/manifestdependency: name='[$LIBNAME]' version='[$LIBVERSION]'  type='win32' processorArchitecture='[$ARCH]' \"""")
+__declspec(dllimport) int print_[$LIBNAME]();</value>
+  </data>
+  <data name="ModuleDefinitionFileTemplate" xml:space="preserve">
+    <value>LIBRARY
+EXPORTS
+     </value>
+  </data>
+  <data name="MSILAppTemplate" xml:space="preserve">
+    <value>using System;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+[assembly: AssemblyTitle(""[$LIBNAME]"")]
+[assembly: AssemblyVersion(""[$LIBVERSION]"")]
+
+namespace [$LIBNAME]
+{
+    public class [$LIBNAME]
+    {
+        public static void print_[$LIBNAME]() { 
+            Console.WriteLine(""&lt;app name='[$LIBNAME]'&gt;\r\n"");
+    
+            [$CALL_LIBRARY]
+        
+            Console.WriteLine(""&lt;/app&gt;\r\n"");
+        }
+
+
+        public static void Main(string[] args)
+        {
+            print_[$LIBNAME]();
+        }
+        
+    }
+}</value>
+  </data>
+  <data name="MSILLibraryFunctionCallTemplate" xml:space="preserve">
+    <value>Console.WriteLine(""&lt;request name='[$LIBNAME]' version='[$LIBVERSION]' /&gt;\r\n"" );
+        [$LIBNAME].[$LIBNAME].print_[$LIBNAME]();</value>
+  </data>
+  <data name="MSILSharedLibTemplate" xml:space="preserve">
+    <value>using System;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+[assembly: AssemblyTitle(""[$LIBNAME]"")]
+[assembly: AssemblyVersion(""[$LIBVERSION]"")]
+
+namespace [$LIBNAME] 
+{
+    public class [$LIBNAME]
+    {
+        public static void print_[$LIBNAME]() 
+        { 
+            Console.WriteLine(""&lt;lib name='[$LIBNAME]' version='[$LIBVERSION]'&gt;\r\n"");
+    
+            [$CALL_LIBRARY]
+        
+            Console.WriteLine(""&lt;/lib&gt;\r\n"");
+        
+        }
+    }
+}</value>
+  </data>
+  <data name="SharedLibTemplate" xml:space="preserve">
+    <value>#include &lt;stdio.h&gt;
+
+__declspec(dllexport) int print_[$LIBNAME]() { 
+    printf(""&lt;lib name='[$LIBNAME]' version='[$LIBVERSION]'&gt;\r\n"");
+    
+    [$CALL_LIBRARY]
+        
+    printf(""&lt;/lib&gt;\r\n"");
+    return 0;
+}</value>
+  </data>
+  <data name="PackageMaker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\packagemaker.ini;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CoAppTestCertPublicKey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\coapptest.pk;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

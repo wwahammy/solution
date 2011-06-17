@@ -61,6 +61,15 @@ namespace TestProject1.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 30 82 01 0a 02 82 01 01 00 8d 80 22 ea 6a 70 b0 2c 4e 42 f6 21 5d b0 42 42 cf 8a 22 25 f2 4c 0c 73 2b 68 08 72 86 c8 46 87 5f 4e 6b 0d 7b fb 0f af 67 15 45 f2 4f 65 d2 e1 54 b0 3c 9e 33 be 7b f4 29 f9 1c d6 5f 9a b4 d0 1b 5c 89 28 ef 11 45 86 1c 9b 5e 01 6b 10 0b 39 95 3f ba c7 3e 5f ca 6a 16 6d 1f fb b9 a5 d7 61 38 48 2c 72 54 72 ec 5a 9e 5c 00 c6 89 fc bc 22 1f f0 90 5a d1 18 09 a2 6d 43 7d d8 d7 b6 b8 f3 f6 85 d7 54 f3 86 25 37 4f d3 34 ca 44 7a c8 72 30 d9 a4 eb f1 ad 57 20 0a ba d1 b3 4a 79 c0 24 19 41 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string crud {
+            get {
+                return ResourceManager.GetString("crud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to                     GNU GENERAL PUBLIC LICENSE
         ///                       Version 3, 29 June 2007
         ///
