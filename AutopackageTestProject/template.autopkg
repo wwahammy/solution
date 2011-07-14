@@ -1,0 +1,32 @@
+﻿package
+{
+    name: [$NAME];
+    min-binding: 1.0.0.0;
+    max-binding: "{{$CURRENT-1}}";
+    
+}
+ 
+identity
+{
+    
+    
+}
+
+assembly[liba.dll]
+{
+    name: liba;
+    include: foo.dll;
+    exclude: bar.dll;
+}
+app
+{
+   
+   
+    include: [$EXEFILE]
+   
+}
+exe-file[something.exe]
+{
+    global-bin: true;
+}
+ 
